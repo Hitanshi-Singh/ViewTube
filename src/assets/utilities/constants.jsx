@@ -82,3 +82,5 @@ export const commentsData = [
     reply: [],
   },
 ];
+
+export const OFFSET_LIVE_CHAT=15;

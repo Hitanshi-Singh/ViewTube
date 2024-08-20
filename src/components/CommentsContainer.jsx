@@ -65,7 +65,7 @@ const CommentsList = ({ list }) => {
 };
 const CommentsContainer = () => {
   return (
-    <div className="w-[56rem]">
+    <div className="w-full">
       <h1 className="text-xl font-bold mx-3">Comments:</h1>
       <div className="pl-2">
         <CommentsList list={commentsData} />

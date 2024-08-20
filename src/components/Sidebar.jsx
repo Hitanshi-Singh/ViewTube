@@ -71,7 +71,7 @@ const Sidebar = () => {
         <div className="p-3 ml-1">
           <ul>
             {primaryList.map((e) => (
-              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"}/>
+              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"} />
             ))}
           </ul>
           <hr />
@@ -80,7 +80,7 @@ const Sidebar = () => {
       {!isMenuOpen && (
         <div className="p-3 w-[4.7rem]">
           <ul>
-          {primaryList.map((e) => (
+            {primaryList.map((e) => (
               <CollapsedSidebar name={e.name} logo={e.logo} key={e} />
             ))}
           </ul>
@@ -91,7 +91,7 @@ const Sidebar = () => {
           <h3 className="mx-2">You ›</h3>
           <ul>
             {secondaryList.map((e) => (
-              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"}/>
+              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"} />
             ))}
           </ul>
         </div>

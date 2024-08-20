@@ -69,7 +69,11 @@ const Header = () => {
       </div>
 
       <div className="flex justify-end w-1/12">
-        <CircleUserRound strokeWidth={1.25} size={26} className="mr-2 cursor-pointer" />
+        <CircleUserRound
+          strokeWidth={1.25}
+          size={26}
+          className="mr-2 cursor-pointer"
+        />
       </div>
     </header>
   );

@@ -11,79 +11,88 @@ import {
   Zap,
 } from "lucide-react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+import SidebarItems from "./SidebarItems";
+import CollapsedSidebar from "./CollapsedSidebar";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
-
+  const route = useLocation();
+  const path = route.pathname;
+  const primaryList = [
+    {
+      name: "Home",
+      logo: <Home strokeWidth={1.25} />,
+    },
+    {
+      name: "Shorts",
+      logo: <Zap strokeWidth={1.25} />,
+    },
+    {
+      name: "Subscriptions",
+      logo: <TvMinimalPlay strokeWidth={1.25} />,
+    },
+  ];
+  const secondaryList = [
+    {
+      name: "Your channel",
+      logo: <ContactRound strokeWidth={1.25} />,
+    },
+    {
+      name: "History",
+      logo: <History strokeWidth={1.25} />,
+    },
+    {
+      name: "Playlists",
+      logo: <ListVideo strokeWidth={1.25} />,
+    },
+    {
+      name: "Your videos",
+      logo: <Youtube strokeWidth={1.25} />,
+    },
+    {
+      name: "Watch later",
+      logo: <Clock4 strokeWidth={1.25} />,
+    },
+    {
+      name: "Liked videos",
+      logo: <ThumbsUp strokeWidth={1.25} />,
+    },
+  ];
   //early return
-  // if (!isMenuOpen) return;
+  if (!isMenuOpen && path === "/watch") return;
   return (
-    <div className={`${isMenuOpen ? `w-56` : `w-28`}`}>
+    <div
+      className={`${isMenuOpen ? `w-64` : `w-20`} sticky ${
+        path === `/watch` && `absolute bg-white shadow-lg shadow-gray-700`
+      }`}
+    >
       {isMenuOpen && (
-        <div className="p-3">
+        <div className="p-3 ml-1">
           <ul>
-            <li className="flex h-10 my-2  rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <Home strokeWidth={1.25} />
-              <p className="w-9/12">Home</p>
-            </li>
-            <li className="flex h-10 my-2  rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <Zap strokeWidth={1.25} />
-              <p className="w-9/12">Shorts</p>
-            </li>
-            <li className="flex h-10 my-2  rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <TvMinimalPlay strokeWidth={1.25} />
-              <p className="w-9/12">Subscriptions</p>
-            </li>
+            {primaryList.map((e) => (
+              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"}/>
+            ))}
           </ul>
           <hr />
         </div>
       )}
       {!isMenuOpen && (
-        <div className="p-3 w-16">
+        <div className="p-3 w-[4.7rem]">
           <ul>
-            <li className="flex h-14 mb-5 mt-2  rounded-lg items-center justify-center hover:bg-gray-100 cursor-pointer flex-col">
-              <Home strokeWidth={1.25} />
-              <p className="text-[0.7rem]">Home</p>
-            </li>
-            <li className="flex h-14 my-5  rounded-lg items-center justify-center hover:bg-gray-100 cursor-pointer flex-col">
-              <Zap strokeWidth={1.25} />
-              <p className="text-[0.7rem]">Shorts</p>
-            </li>
-            <li className="flex h-14 my-5  rounded-lg items-center justify-center hover:bg-gray-100 cursor-pointer flex-col">
-              <TvMinimalPlay strokeWidth={1.25} />
-              <p className="text-[0.7rem]">Subscriptions</p>
-            </li>
+          {primaryList.map((e) => (
+              <CollapsedSidebar name={e.name} logo={e.logo} key={e} />
+            ))}
           </ul>
         </div>
       )}
       {isMenuOpen && (
-        <div className="p-3">
+        <div className="p-3 ml-1">
           <h3 className="mx-2">You ›</h3>
           <ul>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <ContactRound strokeWidth={1.25} />
-              <p className="w-9/12">Your channel</p>
-            </li>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <History strokeWidth={1.25} />
-              <p className="w-9/12">History</p>
-            </li>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <ListVideo strokeWidth={1.25} />
-              <p className="w-9/12">Playlists</p>
-            </li>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <Youtube strokeWidth={1.25} />
-              <p className="w-9/12">Your videos</p>
-            </li>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <Clock4 strokeWidth={1.25} />
-              <p className="w-9/12">Watch later</p>
-            </li>
-            <li className="flex h-10 my-2 rounded-lg items-center justify-between hover:bg-gray-100 cursor-pointer px-1">
-              <ThumbsUp strokeWidth={1.25} />
-              <p className="w-9/12">Liked videos</p>
-            </li>
+            {secondaryList.map((e) => (
+              <SidebarItems name={e.name} logo={e.logo} key={e} link={"/"}/>
+            ))}
           </ul>
         </div>
       )}

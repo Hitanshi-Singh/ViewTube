@@ -1,19 +1,41 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# **ViewTube - A Video Streaming Platform**
 
-Currently, two official plugins are available:
+**ViewTube** is a ReactJS application, inspired by YouTube, built to explore and implement advanced concepts like debouncing, caching, and more.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## **Setup**
 
-# This is Video Streaming Platform  similar to youtube
+Follow these steps to set up and run the project:
 
-# Features
+1. **Clone the Repository**
 
-- Search Filter
-- n-level nested comment section
-- debouncing
-- cache
-- youtube search suggestions api
-- youtube pupular videos api
+   ```bash
+   git clone <repository-url>
+   cd viewtube
+   ```
+
+2. **Install Dependencies**
+
+   ```bash
+   npm install
+   ```
+
+3. **Run the Application**
+
+   ```bash
+   npx vite
+   ```
+
+## **Features**
+
+- **Search Filter:** Real-time filtering of videos based on search queries.
+- **n-Level Nested Comment Section:** Allows users to engage in threaded discussions.
+- **Debouncing:** Optimized search input handling to reduce unnecessary API calls.
+- **Caching:** Improves performance by storing frequently accessed data.
+- **YouTube Search Suggestions API:** Provides instant search suggestions as you type.
+- **YouTube Popular Videos API:** Displays trending videos.
+- **Tailwind CSS:** Streamlined styling with utility-first CSS.
+
+---
+
+This format enhances readability and ensures that key information is easily accessible.

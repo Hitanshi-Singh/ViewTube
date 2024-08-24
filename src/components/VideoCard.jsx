@@ -12,7 +12,7 @@ const VideoCard = ({ info }) => {
     else return a + "K";
   };
   return (
-    <div className={isMenuOpen ? "w-[25rem]" : "w-[21.5rem]"}>
+    <div className={isMenuOpen ? "w-[23rem]" : "w-[20rem]"}>
       <img
         src={thumbnails?.maxres?.url}
         alt=""

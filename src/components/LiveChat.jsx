@@ -12,7 +12,6 @@ const LiveChat = () => {
   useEffect(() => {
     const i = setInterval(() => {
       //api polling
-      console.log("yo yo");
       dispatch(
         addMessage({
           name: generate(),

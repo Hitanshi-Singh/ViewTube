@@ -18,7 +18,6 @@ const Header = () => {
   };
   // console.log(searchQuery);
   const getSearchSuggestions = async () => {
-    console.log("API call - " + searchQuery);
     const data = await fetch(
       `https://api.allorigins.win/get?url=${encodeURIComponent(
         YOUTUBE_SEARCH_API + searchQuery

@@ -19,13 +19,17 @@ const Header = () => {
   // console.log(searchQuery);
   const getSearchSuggestions = async () => {
     console.log("API call - " + searchQuery);
-    const data = await fetch(YOUTUBE_SEARCH_API + searchQuery);
-    const json = await data.json();
-    setsuggestionList(json[1]);
-
+    const data = await fetch(
+      `https://api.allorigins.win/get?url=${encodeURIComponent(
+        YOUTUBE_SEARCH_API + searchQuery
+      )}`
+    );
+    const result = await data.json();
+    const suggestions = JSON.parse(result.contents);
+    setsuggestionList(suggestions[1]);
     dispatch(
       cacheResults({
-        [searchQuery]: json[1],
+        [searchQuery]: suggestions[1],
       })
     );
   };

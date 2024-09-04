@@ -23,13 +23,14 @@ const WatchPage = () => {
             src={
               "https://www.youtube.com/embed/" +
               searchParams.get("v") +
-              "?si=uAfCbAuaLrKXG0ga"
+              "?si=uAfCbAuaLrKXG0ga&autoplay=1&mute=1"
             }
             title="YouTube video player"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerPolicy="strict-origin-when-cross-origin"
             allowFullScreen
+            
           ></iframe>
         </div>
         <div className="w-[57.1rem]">

@@ -16,7 +16,7 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="flex flex-wrap justify-between">
+    <div className="flex flex-wrap justify-between mt-16">
       {video.length > 0 &&
         video.map((v, index) => (
           <Link to={"/watch?v=" + v.id} key={index}>

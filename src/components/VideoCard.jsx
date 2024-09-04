@@ -12,7 +12,7 @@ const VideoCard = ({ info }) => {
     else return a + "K";
   };
   return (
-    <div className={isMenuOpen ? "w-[23rem]" : "w-[20rem]"}>
+    <div className={isMenuOpen ? "w-[23rem] mb-5" : "w-[20rem] mb-5"}>
       <img
         src={thumbnails?.maxres?.url}
         alt=""
@@ -25,7 +25,7 @@ const VideoCard = ({ info }) => {
           className="w-10 h-10 object-cover rounded-full mr-2"
         />
         <div>
-          {" "}
+          
           <h3 className="font-bold ">{title}</h3>
           <p className="text-gray-500 text-sm">{channelTitle}</p>
           <div className="flex space-x-3">

@@ -13,7 +13,7 @@ const ButtonList = () => {
     "Painting",
   ];
   return (
-    <div className="flex space-x-3 mb-3">
+    <div className="flex space-x-3 fixed bg-white py-2 w-full">
       {list.map((elem, index) => (
         <button
           className="bg-gray-100 rounded-lg my-2 px-4 py-1 hover:bg-gray-200"

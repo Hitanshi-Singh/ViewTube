@@ -1,11 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { LOGO } from "../assets/utilities/imageLinks";
 import { ToggleMenu } from "../assets/utilities/appslice";
 import { CircleUserRound, Menu, Search } from "lucide-react";
 import { useEffect, useState } from "react";
 import { YOUTUBE_SEARCH_API } from "../assets/utilities/constants";
 import SearchSuggestions from "./SearchSuggestions";
 import { cacheResults } from "../assets/utilities/searchSlice";
+import viewTube from "../assets/utilities/Viewtube.png";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -25,6 +25,7 @@ const Header = () => {
     );
     const result = await data.json();
     const suggestions = JSON.parse(result.contents);
+    console.log(suggestions);
     setsuggestionList(suggestions[1]);
     dispatch(
       cacheResults({
@@ -43,14 +44,14 @@ const Header = () => {
     };
   }, [searchQuery]);
   return (
-    <header className="flex items-center justify-between h-20 shadow-md px-2">
+    <header className="flex items-center justify-between h-[4.2rem] shadow-md px-2 fixed bg-white w-full z-10">
       <div className="flex items-center space-x-4">
         <Menu
           strokeWidth={1.25}
           onClick={() => onClickMenuHandler()}
           className="ml-2 cursor-pointer"
         />
-        <img src={LOGO} alt="logo" className="w-32 cursor-pointer" />
+        <img src={viewTube} alt="logo" className="w-32 cursor-pointer" />
       </div>
 
       <div className="flex items-center w-2/5 relative">
@@ -61,12 +62,12 @@ const Header = () => {
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           onFocus={() => setShowSuggestionList(true)}
-          onBlur={() => setShowSuggestionList(false)}
+          
         />
         <button className="rounded-r-2xl bg-gray-50 h-9 w-16 outline outline-1 outline-gray-300 hover:bg-gray-100">
           <Search strokeWidth={1.25} className="m-auto cursor-pointer" />
         </button>
-        {searchQuery.length > 0 && showSuggestionList && (
+        {searchQuery && showSuggestionList && (
           <SearchSuggestions list={suggestionList} />
         )}
       </div>

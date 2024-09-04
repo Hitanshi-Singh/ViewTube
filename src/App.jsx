@@ -2,11 +2,11 @@
 
 import { Provider } from "react-redux";
 import Body from "./components/Body";
-import Header from "./components/Header";
 import store from "./assets/utilities/store";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import SearchResultsPage from "./components/SearchResultsPage";
 
 function App() {
   const appRouter = createBrowserRouter([
@@ -22,13 +22,16 @@ function App() {
           path: "/watch",
           element: <WatchPage />,
         },
+        {
+          path: "/search/:query",
+          element: <SearchResultsPage />,
+        },
       ],
     },
   ]);
   return (
     <>
       <Provider store={store}>
-        <Header />
         <RouterProvider router={appRouter} />
       </Provider>
     </>

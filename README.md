@@ -39,3 +39,16 @@ Follow these steps to set up and run the project:
 ---
 
 This format enhances readability and ensures that key information is easily accessible.
+
+# TODO
+
+- interactive comment section
+- shorts section
+- personalised youtube feed
+- signup/login
+- subscriptions page
+- playlist page
+ -- liked videos
+ -- watch later
+- upload you own videos
+- delete your videos

@@ -6,6 +6,7 @@ import { YOUTUBE_SEARCH_API } from "../assets/utilities/constants";
 import SearchSuggestions from "./SearchSuggestions";
 import { cacheResults } from "../assets/utilities/searchSlice";
 import viewTube from "../assets/utilities/Viewtube.png";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -73,11 +74,11 @@ const Header = () => {
       </div>
 
       <div className="flex justify-end w-1/12">
-        <CircleUserRound
+        <Link to="/login"><CircleUserRound
           strokeWidth={1.25}
           size={26}
           className="mr-2 cursor-pointer"
-        />
+        /></Link>
       </div>
     </header>
   );
